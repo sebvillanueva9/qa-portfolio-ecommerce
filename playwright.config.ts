@@ -9,6 +9,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   workers: 1,
   reporter: 'html',
+  globalSetup: './globalSetup',
   use: {
     baseURL: config.shopifyStoreUrl,
     trace: 'on-first-retry',
@@ -17,13 +18,17 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: 'playwright/.auth/storefront.json',
+      },
     },
     {
       name: 'chromium-signed',
       use: {
         ...devices['Desktop Chrome'],
         extraHTTPHeaders: webBotAuthHeaders(),
+        storageState: 'playwright/.auth/storefront.json',
       },
     },
   ],

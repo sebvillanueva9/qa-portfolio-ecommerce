@@ -8,6 +8,8 @@ const schema = z.object({
   clientSecret: z.string().min(1),
   // Storefront API public token — static, generated once via storefrontAccessTokenCreate mutation
   storefrontAccessToken: z.string().min(1),
+  // Storefront password — dev store only, found in Online Store > Preferences > Password protection
+  storefrontPassword: z.string().min(1),
   // Web Bot Auth headers — issued by Shopify under Online Store > Preferences > Crawler access
   webBotSignature: z.string().min(1),
   webBotSignatureInput: z.string().min(1),
@@ -25,6 +27,7 @@ function loadConfig(): Config {
     clientId: process.env.SHOPIFY_CLIENT_ID,
     clientSecret: process.env.SHOPIFY_CLIENT_SECRET,
     storefrontAccessToken: process.env.SHOPIFY_STOREFRONT_ACCESS_TOKEN,
+    storefrontPassword: process.env.SHOPIFY_STOREFRONT_PASSWORD,
     webBotSignature: process.env.SHOPIFY_SIGNATURE,
     webBotSignatureInput: process.env.SHOPIFY_SIGNATURE_INPUT,
     webBotSignatureAgent: process.env.SHOPIFY_SIGNATURE_AGENT,

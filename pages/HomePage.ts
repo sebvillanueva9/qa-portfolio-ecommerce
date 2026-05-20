@@ -9,7 +9,7 @@ export class HomePage {
   constructor(page: Page) {
     this.header = page.getByRole('banner')
     this.hero = page.getByRole('heading', { level: 1 })
-    this.nav = page.getByRole('navigation', { name: 'Main menu' })
+    this.nav = page.getByRole('banner').getByRole('navigation').last()
     this.footer = page.getByRole('contentinfo')
   }
 }
