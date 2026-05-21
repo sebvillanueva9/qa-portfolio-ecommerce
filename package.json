@@ -2,17 +2,25 @@
   "name": "qa-portfolio-ecommerce",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "codegen": "graphql-codegen --config codegen.ts"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "description": "",
   "devDependencies": {
+    "@graphql-codegen/cli": "^7.0.0",
+    "@graphql-codegen/typed-document-node": "^7.0.0",
+    "@graphql-codegen/typescript": "^6.0.1",
+    "@graphql-codegen/typescript-operations": "^6.0.2",
     "@playwright/test": "^1.60.0",
+    "@shopify/storefront-api-client": "^1.0.10",
     "@total-typescript/tsconfig": "^1.0.4",
     "@types/node": "^25.9.0",
     "dotenv": "^17.4.2",
+    "graphql": "^16.14.0",
     "zod": "^4.4.3"
   }
 }
