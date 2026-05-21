@@ -4,6 +4,6 @@
     "outDir": "dist",
     "rootDir": "."
   },
-  "include": ["tests/**/*", "fixtures/**/*", "pages/**/*", "helpers/**/*"],
+  "include": ["tests/**/*", "fixtures/**/*", "pages/**/*", "helpers/**/*", "clients/**/*", "generated/**/*"],
   "exclude": ["node_modules", "dist", "playwright-report"]
 }
